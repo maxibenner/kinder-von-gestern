@@ -1,9 +1,16 @@
+:root {
+  --main: #394d98;
+  --accent: #ff6464;
+  --shadow: 0 3px 30px rgba(0, 0, 0, 0.1);
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--main);
 }
 
 a {
@@ -13,4 +20,33 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Recoleta";
+  src: local("Recoleta"), url("/recoleta.woff") format("woff");
+}
+
+h1 {
+  margin: 0;
+  font-family: Recoleta;
+  color: var(--main);
+  font-size: 3rem;
+}
+h2 {
+  font-size: 1.5rem;
+}
+
+@media (max-width: 400px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+}
+
+ol {
+  counter-reset: item;
+}
+li {
+  margin: 25px 0;
+  line-height: 1.5rem;
 }

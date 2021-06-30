@@ -1,0 +1,23 @@
+.main {
+  padding: 200px 25px 0 25px;
+  min-height: calc(100vh - 200px);
+}
+
+/* Section */
+.section {
+  margin-bottom: 150px;
+  margin: 0 auto;
+  max-width: 800px;
+}
+.section > h2 {
+  margin-top: 100px;
+  margin-bottom: 25px;
+}
+.section > h3 {
+  line-height: 2rem;
+}
+.section > p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  line-height: 2rem;
+}

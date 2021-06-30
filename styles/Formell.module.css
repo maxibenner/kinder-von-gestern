@@ -1,0 +1,27 @@
+.main {
+  padding: 200px 25px 0 25px;
+  min-height: calc(100vh - 200px);
+}
+
+/* Section */
+.section {
+  margin-bottom: 150px;
+  margin: 0 auto;
+  max-width: 600px;
+}
+.section > h2 {
+  margin-top: 100px;
+  margin-bottom: 25px;
+}
+.section > h3 {
+  margin: 70px 0 0 0;
+  line-height: 2rem;
+}
+.section > p {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+}
+.section > p > a {
+  text-decoration: underline;
+}

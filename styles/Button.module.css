@@ -1,0 +1,31 @@
+.container {
+  cursor: pointer;
+  display: flex;
+  height: 42px;
+  width: auto;
+  font-size: 1rem;
+  align-items: center;
+  background: var(--main);
+  padding: 12px 30px 12px 0;
+  border-radius: 50px;
+  color: white;
+  border: none;
+}
+.container > svg {
+  margin-left: 30px;
+}
+.container > p {
+  margin: 0;
+}
+
+/* Modifiers */
+.container_accent {
+  background: var(--accent);
+}
+.container_large {
+  padding: 25px 50px;
+  font-size: 1.3rem;
+}
+.container_large > svg {
+  margin-left: 0;
+}
