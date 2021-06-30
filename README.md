@@ -7,6 +7,6 @@ Kinder von gestern is a German non-profit that tries to put and end to old-age r
 
 [Visit Fotura](https://kinder-von-gestern.vercel.app)
 
-<img src="./readme_preview.jpg">
+<img src="./readme_preview_new.jpg">
 
 
