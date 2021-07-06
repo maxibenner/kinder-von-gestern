@@ -1,0 +1,15 @@
+export const months = [
+  "empty",
+  "Januar",
+  "Februar",
+  "März",
+  "April",
+  "Mai",
+  "Juni",
+  "July",
+  "August",
+  "September",
+  "Oktober",
+  "November",
+  "Dezember",
+];

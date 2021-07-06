@@ -2,18 +2,43 @@ import Head from "next/head";
 import pages from "../styles/Pages.module.css";
 import FacebookPost from "../components/FacebookPost";
 import { useState, useEffect } from "react";
+import { months } from "../helpers/months";
 
 const Neuigkeiten = () => {
-  const [posts, setPosts] = useState();
+  const [posts, setPosts] = useState(null);
 
-  // Get facebook posts
+  // Get and format facebook posts
   useEffect(() => {
-    fetch("http://localhost:3000/api/fbGroupInfo").then(async (res) => {
+    fetch(`${window.location.origin}/api/fbGroupInfo`).then(async (res) => {
       const parsedResponse = await res.json();
-      console.log(parsedResponse);
+
+      // Format posts
+      let posts = [];
+      parsedResponse.data.forEach((post) => {
+        // Split title and bosy
+        const firstLineBreak = post.message.search("\n");
+        const title = post.message.slice(0, firstLineBreak);
+        const body = post.message.slice(firstLineBreak).replace(/\s{10,}/g, "");
+
+        // Format time_created
+        const time = Date.parse(post.created_time);
+        const date = new Date(time * 1000);
+        const formatted_date = `${date.getDay()}. ${months[date.getMonth()]}`;
+
+        // Build and push post object
+        posts.push({
+          id: post.id,
+          title: title,
+          body: body,
+          created: formatted_date,
+          imgSrc: post.attachments
+            ? post.attachments.data[0].media.image.src
+            : null,
+        });
+      });
 
       // Push fb posts to state
-      setPosts(parsedResponse.data);
+      setPosts(posts);
     });
   }, []);
 
@@ -32,16 +57,7 @@ const Neuigkeiten = () => {
           <h1>Neuigkeiten</h1>
           <div>
             {posts &&
-              posts.map((post) => (
-                <FacebookPost
-                  key={post.id}
-                  message={post.message}
-                  created={post.created_time}
-                  imgUrl={
-                    post.attachments && post.attachments.data[0].media.image.src
-                  }
-                />
-              ))}
+              posts.map((post) => <FacebookPost key={post.id} post={post} />)}
           </div>
         </div>
       </div>
