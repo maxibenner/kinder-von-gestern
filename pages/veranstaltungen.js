@@ -29,7 +29,7 @@ const Veranstaltungen = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={pages.main}>
+      <div className={pages.main} style={{ minHeight: "110vh" }}>
         <div className={pages.section}>
           <h1>Veranstaltungen</h1>
           {events.length > 0 ? (

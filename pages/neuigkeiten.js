@@ -3,6 +3,8 @@ import pages from "../styles/Pages.module.css";
 import FacebookPost from "../components/FacebookPost";
 import { useState, useEffect } from "react";
 import { dateArray } from "../helpers/date";
+import { FaSpinner } from "react-icons/fa";
+import utils from "../styles/Utils.module.css";
 
 const Neuigkeiten = () => {
   const [posts, setPosts] = useState(null);
@@ -23,7 +25,9 @@ const Neuigkeiten = () => {
         // Format time_created
         const time = Date.parse(post.created_time);
         const date = new Date(time * 1000);
-        const formatted_date = `${date.getDay()}. ${dateArray[date.getMonth()]}`;
+        const formatted_date = `${date.getDay()}. ${
+          dateArray[date.getMonth()]
+        }`;
 
         // Build and push post object
         posts.push({
@@ -52,12 +56,17 @@ const Neuigkeiten = () => {
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className={pages.main}>
+      <div className={pages.main} style={{ minHeight: "110vh" }}>
         <div className={pages.section}>
           <h1>Neuigkeiten</h1>
           <div>
-            {posts &&
-              posts.map((post) => <FacebookPost key={post.id} post={post} />)}
+            {posts ? (
+              posts.map((post) => <FacebookPost key={post.id} post={post} />)
+            ) : (
+              <div className={utils.spinnerContainer}>
+                <FaSpinner className={utils.spinner} />
+              </div>
+            )}
           </div>
         </div>
       </div>

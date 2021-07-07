@@ -78,7 +78,9 @@ const Navbar = () => {
               </Link>
             </div>
             <Menu />
-            <Button accent src={<FiGift />} text="Helfen" />
+            <Link href="/helfen">
+              <Button accent src={<FiGift />} text="Helfen" />
+            </Link>
           </div>
         ) : (
           <>

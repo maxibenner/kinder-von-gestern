@@ -6,9 +6,10 @@ import ReactPlayer from "react-player";
 import Button from "../components/Button";
 import { FiGift } from "react-icons/fi";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function About() {
-  const [playerLoaded, setPlayerLoaded] = useState(false)
+  const [playerLoaded, setPlayerLoaded] = useState(false);
   return (
     <div>
       <Head>
@@ -32,7 +33,10 @@ export default function About() {
             }}
           >
             <ReactPlayer
-              style={{ opacity: playerLoaded ? 1 : 0, transition: ".5s opacity" }}
+              style={{
+                opacity: playerLoaded ? 1 : 0,
+                transition: ".5s opacity",
+              }}
               onReady={() => setPlayerLoaded(true)}
               className={s.react_player}
               url="https://vimeo.com/568025954"
@@ -120,7 +124,9 @@ export default function About() {
             Spenden sie Zeit oder Geld um Deutschlands erstes Jugendzentrum für
             Senioren zu unterstützen.
           </p>
-          <Button large accent text="Spenden" src={<FiGift />} />
+          <Link href="/helfen">
+            <Button large accent text="Spenden" src={<FiGift />} />
+          </Link>
         </div>
       </div>
     </div>
