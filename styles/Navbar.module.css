@@ -54,7 +54,6 @@
   left: 35px;
   bottom: 0;
   background: var(--accent);
-  transform: rotate(-2deg);
 }
 
 @media (max-width: 1027px) {

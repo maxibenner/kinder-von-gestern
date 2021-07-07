@@ -2,14 +2,14 @@ import Head from "next/head";
 import pages from "../styles/Pages.module.css";
 import FacebookPost from "../components/FacebookPost";
 import { useState, useEffect } from "react";
-import { months } from "../helpers/months";
+import { dateArray } from "../helpers/date";
 
 const Neuigkeiten = () => {
   const [posts, setPosts] = useState(null);
 
   // Get and format facebook posts
   useEffect(() => {
-    fetch(`${window.location.origin}/api/fbGroupInfo`).then(async (res) => {
+    fetch(`${window.location.origin}/api/page_posts`).then(async (res) => {
       const parsedResponse = await res.json();
 
       // Format posts
@@ -23,7 +23,7 @@ const Neuigkeiten = () => {
         // Format time_created
         const time = Date.parse(post.created_time);
         const date = new Date(time * 1000);
-        const formatted_date = `${date.getDay()}. ${months[date.getMonth()]}`;
+        const formatted_date = `${date.getDay()}. ${dateArray[date.getMonth()]}`;
 
         // Build and push post object
         posts.push({

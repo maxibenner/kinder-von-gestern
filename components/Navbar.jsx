@@ -42,7 +42,7 @@ const Menu = ({ open, onClick }) => {
           Neugkeiten
         </a>
       </Link>
-      <Link href="/">
+      <Link href="/veranstaltungen">
         <a
           onClick={onClick}
           className={

@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Link from "next/link";
 import { BiDice3 } from "react-icons/bi";
 import { FaRunning } from "react-icons/fa";
 import {
@@ -39,12 +40,17 @@ export default function Home() {
               </div>
               <div>
                 <FiMap />
-                <a href="http://maps.google.com/?q=Schleißheimer Straße 53, 80797 München" target="_empty">
+                <a
+                  href="http://maps.google.com/?q=Schleißheimer Straße 53, 80797 München"
+                  target="_empty"
+                >
                   Schleißheimer Straße 53, München
                 </a>
               </div>
             </div>
-            <Button text="Veranstaltungen" src={<FiCalendar />} large />
+            <Link href="/veranstaltungen">
+              <Button text="Veranstaltungen" src={<FiCalendar />} large />
+            </Link>
           </div>
           <div className={s.container_images}>
             <img src="/images/1.jpg" />
