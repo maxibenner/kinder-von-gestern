@@ -1,10 +1,9 @@
 import Head from "next/head";
-import pages from "../styles/Pages.module.css";
+import { useEffect, useState } from "react";
 import FacebookPost from "../components/FacebookPost";
-import { useState, useEffect } from "react";
+import { SpinnerBlock } from "../components/SpinnerBlock";
 import { dateArray } from "../helpers/date";
-import { FaSpinner } from "react-icons/fa";
-import utils from "../styles/Utils.module.css";
+import pages from "../styles/Pages.module.css";
 
 const Neuigkeiten = () => {
   const [posts, setPosts] = useState(null);
@@ -63,9 +62,7 @@ const Neuigkeiten = () => {
             {posts ? (
               posts.map((post) => <FacebookPost key={post.id} post={post} />)
             ) : (
-              <div className={utils.spinnerContainer}>
-                <FaSpinner className={utils.spinner} />
-              </div>
+              <SpinnerBlock />
             )}
           </div>
         </div>

@@ -1,0 +1,8 @@
+.placeholder {
+  padding: 25px 50px;
+  background: #eff3ff;
+  border-radius: 15px;
+  margin: 35px 0;
+  display: flex;
+  justify-content: center;
+}

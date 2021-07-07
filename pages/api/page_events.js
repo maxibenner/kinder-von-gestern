@@ -39,6 +39,7 @@ export default (req, res) => {
             month: month,
             year: year,
             time: `${start_time_hours}:${start_time_minutes}`,
+            iso: event.start_time,
           },
           end: {
             time: end_time_hours

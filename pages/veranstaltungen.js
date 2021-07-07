@@ -1,9 +1,7 @@
-import { useEffect, useState } from "react";
-import utils from "../styles/Utils.module.css";
-import pages from "../styles/Pages.module.css";
 import Head from "next/head";
-import { FacebookEvent } from "../components/FacebookEvent";
-import { FaSpinner } from "react-icons/fa";
+import { useEffect, useState } from "react";
+import { EventContainer } from "../components/EventContainer";
+import pages from "../styles/Pages.module.css";
 
 const Veranstaltungen = () => {
   const [events, setEvents] = useState([]);
@@ -32,15 +30,7 @@ const Veranstaltungen = () => {
       <div className={pages.main} style={{ minHeight: "110vh" }}>
         <div className={pages.section}>
           <h1>Veranstaltungen</h1>
-          {events.length > 0 ? (
-            events.map((event) => (
-              <FacebookEvent key={event.id} event={event.data} />
-            ))
-          ) : (
-            <div className={utils.spinnerContainer}>
-              <FaSpinner className={utils.spinner} />
-            </div>
-          )}
+          <EventContainer events={events} />
         </div>
       </div>
       <svg
