@@ -5,7 +5,7 @@ import s from "../styles/EventContainer.module.css";
 
 export const EventContainer = ({ events }) => {
   const [eventTracker, setEventTracker] = useState({});
-  const currentTimestamp = Date.now();
+  const currentTimestamp = Date.now() + 1800; // Adds 30 minutes to current time as a buffer
 
   useEffect(() => {
     // Sort into boxes
