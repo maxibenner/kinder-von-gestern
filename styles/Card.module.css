@@ -9,6 +9,7 @@
   padding: 50px 25px 25px 25px;
   max-width: 300px;
   text-align: center;
+  height: fit-content;
 }
 .imageContainer {
   font-size: 3.5rem;
@@ -21,12 +22,15 @@
 }
 .container > p {
   font-weight: 300;
-  margin-bottom: 45px;
+  margin-bottom: 30px;
   line-height: 1.5rem;
 }
 .container > button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   cursor: pointer;
-  margin: auto 0 0 0;
+  margin: 15px 0 0 0;
   height: 55px;
   border: none;
   background: white;
@@ -34,4 +38,12 @@
   font-weight: 600;
   font-size: 1rem;
   color: var(--main);
+}
+.buttonText {
+  width: 150px;
+}
+.buttonIcon {
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
 }

@@ -124,7 +124,7 @@ export default function About() {
             Spenden sie Zeit oder Geld um Deutschlands erstes Jugendzentrum für
             Senioren zu unterstützen.
           </p>
-          <Link href="/helfen">
+          <Link href="/#helfen">
             <Button large accent text="Spenden" src={<FiGift />} />
           </Link>
         </div>

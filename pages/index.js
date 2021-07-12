@@ -10,14 +10,22 @@ import {
   FiClock,
   FiMap,
 } from "react-icons/fi";
+import { FaPaypal } from "react-icons/fa";
+import { TiDocumentText } from "react-icons/ti";
 import { MdFreeBreakfast } from "react-icons/md";
+import { HiOutlineMail } from "react-icons/hi";
 import Button from "../components/Button";
 import Card from "../components/Card";
 import FeatureShowcase from "../components/FeatureShowcase";
 import LinkArrow from "../components/LinkArrow";
 import s from "../styles/Home.module.css";
+import { useRef } from "react";
 
 export default function Home() {
+  const paypalRef = useRef();
+  const handlePaypalDonation = () => {
+    paypalRef.current.click();
+  };
   return (
     <div>
       <Head>
@@ -96,7 +104,7 @@ export default function Home() {
           />
         </div>
 
-        <div className={s.section}>
+        <div className={s.section} id="helfen">
           <h1>Mithelfen</h1>
           <p>Wir können jede Art von Hilfe gebrauchen.</p>
           <div className={s.cardContainer}>
@@ -105,20 +113,47 @@ export default function Home() {
               title="Zeit spenden"
               body="Kochen sie gerne? Ist Unterhaltung Ihre Stärke? Dann engagieren sie sich vor Ort!"
               buttonText="Engagieren"
+              buttonIcon={<HiOutlineMail />}
               onClick={() =>
                 (window.location.href =
                   "mailto:info@kvg-ev.de?subject=Engagement%20Angebot&body=1. Wie lautet Ihr Vor- und Nachname?%0d%0d%0d%0d2. Wie würden Sie sich gerne engagieren?%0d%0d%0d%0d3. Was ist Ihre zeitliche Verfügbarkeit?%0d%0d%0d%0d4. Wollen Sie uns noch etwas anderes mitteilen?")
               }
+              accent
             />
             <Card
               image={<FiGift />}
               title="Geld spenden"
               body="Jede noch so kleine Spende ermöglicht es uns den Traum der Kinder von gestern weiterzuführen."
-              buttonText="Jetzt spenden"
-              accent
+              buttonText="Online spenden"
+              buttonIcon={<FaPaypal />}
+              buttonText2="Spendenformular herunterladen"
+              buttonIcon2={<TiDocumentText />}
+              onClick={handlePaypalDonation}
+              onClick2={() =>
+                window.alert(
+                  "Das Spendenformular ist derzeit noch nicht verfügbar. Bitte versuchen Sie es in ein paar Tagen erneut."
+                )
+              }
             />
           </div>
         </div>
+        <form
+          style={{ display: "none" }}
+          action="https://www.paypal.com/donate"
+          method="post"
+          target="_top"
+        >
+          <input type="hidden" name="hosted_button_id" value="Q72AWA342TDWG" />
+          <input
+            ref={paypalRef}
+            type="image"
+            src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif"
+            border="0"
+            name="submit"
+            title="PayPal - The safer, easier way to pay online!"
+            alt="Donate with PayPal button"
+          />
+        </form>
       </main>
       <svg
         xmlns="http://www.w3.org/2000/svg"

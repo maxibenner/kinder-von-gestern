@@ -78,7 +78,7 @@ const Navbar = () => {
               </Link>
             </div>
             <Menu />
-            <Link href="/helfen">
+            <Link href="/#helfen">
               <Button accent src={<FiGift />} text="Helfen" />
             </Link>
           </div>
@@ -90,16 +90,17 @@ const Navbar = () => {
                   <img src="/logo.png" style={{ cursor: "pointer" }} />
                 </Link>
               </div>
-              <Button
+              <Link
+                href="/#helfen"
                 style={{
                   position: "absolute",
                   left: "50%",
                   transform: "translateX(-50%)",
                 }}
-                accent
-                src={<FiGift />}
-                text="Helfen"
-              />
+              >
+                <Button accent src={<FiGift />} text="Helfen" />
+              </Link>
+
               <h3
                 onClick={() => setOpen((prev) => !prev)}
                 style={{ cursor: "pointer" }}
