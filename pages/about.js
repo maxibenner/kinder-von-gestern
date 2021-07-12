@@ -125,7 +125,9 @@ export default function About() {
             Senioren zu unterstützen.
           </p>
           <Link href="/#helfen">
-            <Button large accent text="Spenden" src={<FiGift />} />
+            <div>
+              <Button large accent text="Spenden" src={<FiGift />} />
+            </div>
           </Link>
         </div>
       </div>

@@ -79,7 +79,9 @@ const Navbar = () => {
             </div>
             <Menu />
             <Link href="/#helfen">
-              <Button accent src={<FiGift />} text="Helfen" />
+              <div>
+                <Button accent src={<FiGift />} text="Helfen" />
+              </div>
             </Link>
           </div>
         ) : (
@@ -98,7 +100,9 @@ const Navbar = () => {
                   transform: "translateX(-50%)",
                 }}
               >
-                <Button accent src={<FiGift />} text="Helfen" />
+                <div>
+                  <Button accent src={<FiGift />} text="Helfen" />
+                </div>
               </Link>
 
               <h3

@@ -9,6 +9,7 @@ import {
   FiInfo,
   FiClock,
   FiMap,
+  FiPhone,
 } from "react-icons/fi";
 import { FaPaypal } from "react-icons/fa";
 import { TiDocumentText } from "react-icons/ti";
@@ -55,9 +56,20 @@ export default function Home() {
                   Schleißheimer Straße 53, München
                 </a>
               </div>
+              <div>
+                <FiPhone />
+                <a
+                  href="tel:089-36008282
+"
+                >
+                  089 36008282
+                </a>
+              </div>
             </div>
             <Link href="/veranstaltungen">
-              <Button text="Veranstaltungen" src={<FiCalendar />} large />
+              <div>
+                <Button text="Veranstaltungen" src={<FiCalendar />} large />
+              </div>
             </Link>
           </div>
           <div className={s.container_images}>
