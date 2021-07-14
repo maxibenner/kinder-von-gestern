@@ -24,8 +24,12 @@ import { useRef } from "react";
 
 export default function Home() {
   const paypalRef = useRef();
+  const formRef = useRef();
   const handlePaypalDonation = () => {
     paypalRef.current.click();
+  };
+  const handleFormDownload = () => {
+    formRef.current.click();
   };
   return (
     <div>
@@ -77,7 +81,6 @@ export default function Home() {
             <img src="/images/2.jpg" />
           </div>
         </div>
-
         <div
           className={s.section}
           style={{ minHeight: "500px", marginTop: "-10%" }}
@@ -90,7 +93,6 @@ export default function Home() {
           </p>
           <LinkArrow href="about" />
         </div>
-
         <div className={s.section}>
           <h1>Unser Angebot</h1>
           <FeatureShowcase
@@ -115,7 +117,6 @@ export default function Home() {
             body="Spaziergänge an der frischen Luft, Yoga, Tanzabende und sanftes Körpertraining sind Teil unseres Fitnessprogramms."
           />
         </div>
-
         <div className={s.section} id="helfen">
           <h1>Mithelfen</h1>
           <p>Wir können jede Art von Hilfe gebrauchen.</p>
@@ -141,11 +142,7 @@ export default function Home() {
               buttonText2="Spendenformular herunterladen"
               buttonIcon2={<TiDocumentText />}
               onClick={handlePaypalDonation}
-              onClick2={() =>
-                window.alert(
-                  "Das Spendenformular ist derzeit noch nicht verfügbar. Bitte versuchen Sie es in ein paar Tagen erneut."
-                )
-              }
+              onClick2={handleFormDownload}
             />
           </div>
         </div>
@@ -166,6 +163,14 @@ export default function Home() {
             alt="Donate with PayPal button"
           />
         </form>
+        <a
+          style={{ display: "none" }}
+          ref={formRef}
+          href="/Kinder-von-gestern_Foerdermitgliedsantrag.pdf"
+          download="Kvg-Foerdermitgliedsantrag.pdf"
+        >
+          Download
+        </a>
       </main>
       <svg
         xmlns="http://www.w3.org/2000/svg"
