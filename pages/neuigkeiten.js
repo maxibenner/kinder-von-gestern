@@ -23,9 +23,9 @@ const Neuigkeiten = () => {
 
         // Format time_created
         const time = Date.parse(post.created_time);
-        const date = new Date(time * 1000);
+        const date = new Date(time /* * 1000*/);
         const formatted_date = `${date.getDay()}. ${
-          dateArray[date.getMonth()]
+          dateArray[date.getMonth() + 1]
         }`;
 
         // Build and push post object
@@ -39,7 +39,6 @@ const Neuigkeiten = () => {
             : null,
         });
       });
-
       // Push fb posts to state
       setPosts(posts);
     });
