@@ -2,6 +2,7 @@
   --main: #394d98;
   --accent: #ff6464;
   --shadow: 0 3px 30px rgba(0, 0, 0, 0.1);
+  --shadowSmall: 0 3px 15px rgba(0, 0, 0, 0.07);
 }
 
 html,

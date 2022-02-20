@@ -3,7 +3,7 @@
   background: white;
   position: fixed;
   width: 100%;
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadowSmall);
   z-index: 999;
   height: 70px;
 }
