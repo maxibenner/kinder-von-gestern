@@ -77,8 +77,8 @@ export default function Home() {
             </Link>
           </div>
           <div className={s.container_images}>
-            <img src="/images/1.jpg" />
             <img src="/images/2.jpg" />
+            <img src="/images/1.jpg" />
           </div>
         </div>
         <div
